@@ -1,0 +1,29 @@
+<div class="filters">
+    <mat-form-field>
+        <mat-label>Sort</mat-label>
+        <mat-select [(ngModel)]="selected" (selectionChange)="searchGames(selected)">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let option of selectOptions" [value]="option">{{option}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+
+<div class="games" *ngIf="(games$|async) as games">
+    <ng-container *ngFor="let game of games.results">
+        <div class="game" (click)="openGameInfo(game.id)">
+            <div class="game-thumb-container">
+                <img *ngIf="game.background_image" [src]="game.background_image" alt="thumbnail" class="game-thumbnail">
+                <div *ngIf="!game.background_image">No image</div>
+            </div>
+            <div class="game-description">
+                <p [matTooltip]="game.name" matTooltipPosition="above" class="game-name">{{game.name}}</p>
+                <div class="game-platforms">
+                    <img *ngFor="let gamePlatform of game.parent_platforms" [matTooltip]="gamePlatform.platform.slug"
+                        matTooltipPosition="right" src="assets/images/platforms/{{ gamePlatform.platform.slug }}.svg"
+                        [alt]="gamePlatform.platform.slug" class="game-platform">
+                </div>
+            </div>
+        </div>
+
+    </ng-container>
+</div>
