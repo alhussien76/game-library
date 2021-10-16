@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.3.
 
+## Deployment
+
+This app deployed on firebase [Go to app](https://videogame-library.web.app/)
+
 ## Future work
 
 -Responsive
