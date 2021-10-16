@@ -1,6 +1,14 @@
-# VideoGames
+# VideoGames library
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.3.
+
+## Future work
+
+-Responsive
+
+-Pagination
+
+-Show screenshots of the game on hover
 
 ## Development server
 
